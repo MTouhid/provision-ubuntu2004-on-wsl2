@@ -16,7 +16,7 @@ Intended to be re-runnable (idempotent) to maintain and update when required.
 
 ### Update the package lists
 
-1. `sudo apt-get update`
+`sudo apt-get update`
 
 ### Configure Python & pipenv
 
