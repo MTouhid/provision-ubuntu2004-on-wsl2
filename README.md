@@ -14,6 +14,10 @@ Intended to be re-runnable (idempotent) to maintain and update when required.
 1. WSL 2
 1. Ubuntu 20.04 installed via Windows Store.
 
+### Update the package lists
+
+1. `sudo apt-get update`
+
 ### Configure Python & pipenv
 
 1. `sudo apt install --yes python3-pip`
@@ -27,7 +31,8 @@ Intended to be re-runnable (idempotent) to maintain and update when required.
 1. `pipenv shell`
 1. `ansible-galaxy install -r requirements.yml`
 1. `ansible-playbook playbook.yml -i inventory --ask-become-pass`
-1. Profit :smile:
+1. Enter your Ubuntu account password at the prompt.
+1. All done!
 
 ## What is Installed?
 
