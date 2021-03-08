@@ -1,0 +1,62 @@
+# ----------------------
+# Bash Aliases
+# ----------------------
+alias clr='clear' # Clear your terminal screen
+alias ip='curl icanhazip.com' # Your public IP address
+alias ll='ls -al --color' # List all files in current directory in long list format
+alias ldir='ls -al --color | grep ^d' # List all directories in current directory in long list format
+
+# ----------------------
+# Git Aliases
+# ----------------------
+alias ga='git add'
+alias gaa='git add .'
+alias gaaa='git add --all'
+alias gau='git add --update'
+alias gb='git branch'
+alias gbd='git branch --delete '
+alias gc='git commit'
+alias gcm='git commit --message'
+alias gcf='git commit --fixup'
+alias gco='git checkout'
+alias gcob='git checkout -b'
+alias gcom='git checkout master'
+alias gcos='git checkout staging'
+alias gcod='git checkout develop'
+alias gd='git diff'
+alias gda='git diff HEAD'
+alias gi='git init'
+alias glg='git log --graph --oneline --decorate --all'
+alias gld='git log --all --graph --pretty="%C(bold ul yellow)%h%C(reset)%x09%C(reset)Commit%x09: %C(green)%s%n%x09%x09%C(reset)Time%x09: %C(magenta)%aD%n%x09%x09%C(reset)Author%x09: %C(bold blue)%an%n"'
+alias gm='git merge --no-ff'
+alias gma='git merge --abort'
+alias gmc='git merge --continue'
+alias gp='git pull'
+alias gpr='git pull --rebase'
+alias gr='git rebase'
+alias gs='git status'
+alias gss='git status --short'
+alias gst='git stash'
+alias gsta='git stash apply'
+alias gstd='git stash drop'
+alias gstl='git stash list'
+alias gstp='git stash pop'
+alias gsts='git stash save'
+
+# ----------------------
+# My Custom Aliases
+# ----------------------
+alias regenv='export REGISTRY_URL={{ moj_pttp_dev_account_id }}.dkr.ecr.eu-west-2.amazonaws.com && echo -e "\e[1m\e[33m>>>\e[0m The environment variable \e[41m REGISTRY_URL \e[0m is now set to: \e[1m\e[4m\e[32m"$REGISTRY_URL"\e[0m"'
+alias shenv='export SHARED_SERVICES_ACCOUNT_ID={{ moj_pttp_shared_services_account_id }} && echo -e "\e[1m\e[33m>>>\e[0m The environment variable \e[41m SHARED_SERVICES_ACCOUNT_ID \e[0m is now set to: \e[1m\e[4m\e[32m"$SHARED_SERVICES_ACCOUNT_ID"\e[0m"'
+alias src='source ~/.bashrc'
+
+# -------------------------------------
+# My Custom Aliases for Git Repo Paths
+# -------------------------------------
+alias infra='cd ~/gitrepos/dns-dhcp/staff-device-dns-dhcp-infrastructure/'
+alias admin='cd ~/gitrepos/dns-dhcp/staff-device-dns-dhcp-admin/'
+alias dhcp='cd ~/gitrepos/dns-dhcp/staff-device-dhcp-server/'
+alias dns='cd ~/gitrepos/dns-dhcp/staff-device-dns-server/'
+alias disaster='cd ~/gitrepos/dns-dhcp/staff-device-dns-dhcp-disaster-recovery/'
+alias monitoring='cd ~/gitrepos/ima/staff-infrastructure-monitoring/'
+alias config='cd ~/gitrepos/ima/staff-infrastructure-monitoring-config/'

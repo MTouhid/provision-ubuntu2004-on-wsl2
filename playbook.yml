@@ -4,6 +4,7 @@
 
   vars_files:
     - vars.yml
+    - secret_vars.yml
 
   pre_tasks:
     - name: "Update apt cache if needed."
@@ -44,8 +45,15 @@
           - tree
           - unzip
           - zip
+          - python-jinja2
       become: true
 
+    - include_tasks: tasks/refactor_bashrc.yml
+      when: refactor_bashrc
+
+    - include_tasks: tasks/add_bash_aliases.yml
+      when: add_bash_aliases
+    
     - include_tasks: tasks/yarn.yml
       when: install_yarn
 

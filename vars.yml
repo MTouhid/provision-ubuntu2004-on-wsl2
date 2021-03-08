@@ -5,3 +5,5 @@ install_tfenv: yes
 install_yarn: yes
 install_kubectl: yes
 install_eksctl: yes
+refactor_bashrc: yes
+add_bash_aliases: yes

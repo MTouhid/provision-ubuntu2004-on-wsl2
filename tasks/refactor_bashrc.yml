@@ -1,0 +1,6 @@
+- name: Refactor bashrc file
+  template:
+    src: bash.bashrc.j2
+    dest: ${HOME}/.bashrc
+    backup: yes
+  
