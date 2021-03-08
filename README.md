@@ -25,14 +25,31 @@ Intended to be re-runnable (idempotent) to maintain and update when required.
 
 ### Clone and Run
 
-1. `git clone git@github.com:neilkidd/provision-ubuntu2004-on-wsl2.git`
-1. `cd provision-ubuntu2004-on-wsl2`
-1. `pipenv install --dev`
-1. `pipenv shell`
-1. `ansible-galaxy install -r requirements.yml`
-1. `ansible-playbook playbook.yml -i inventory --ask-become-pass`
-1. Enter your Ubuntu account password at the prompt.
-1. All done!
+1. Clone this repo.
+2. Change the directory
+```shell
+cd provision-ubuntu2004-on-wsl2
+```
+3. Copy `secret_vars.yml.example` to `secret_vars.yml`
+```shell
+cp secret_vars.yml.example secret_vars.yml
+```
+4. Modify the `secret_vars.yml` file and replace `<moj-pttp-dev-aws-account-id>` and `<moj-pttp-shared-services-aws-account-id>` with respective AWS account ids.
+5. Execute the following commands
+```shell
+pipenv install --dev
+pipenv shell
+```
+6. Install Ansible requirements
+```shell
+ansible-galaxy install -r requirements.yml
+```
+7. Go ahead and run the playbook
+```shell
+ansible-playbook playbook.yml -i inventory --ask-become-pass
+```
+6. Enter your Ubuntu account password at the prompt.
+7. All done ! :boom:. Now enjoy :sunglasses:.
 
 ## What is Installed?
 
@@ -41,6 +58,8 @@ Intended to be re-runnable (idempotent) to maintain and update when required.
 - [tfenv](tasks/tfenv.yml)
 - [aws vault](tasks/aws-vault.yml)
 - [rbenv](tasks/rbenv.yml)
+- [eksctl](tasks/eksctl.yml)
+- [kubectl](tasks/kubectl.yml)
 
 
 ## Notes
