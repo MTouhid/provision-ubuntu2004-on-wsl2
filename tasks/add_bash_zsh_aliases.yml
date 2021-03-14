@@ -1,0 +1,6 @@
+- name: Add aliases for bash and zsh
+  template:
+    src: my_custom.bash_zsh_aliases.j2
+    dest: ${HOME}/.bash_zsh_aliases
+    backup: yes
+  

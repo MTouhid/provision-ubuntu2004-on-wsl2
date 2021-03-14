@@ -30,6 +30,7 @@
       apt:
         state: latest
         name:
+          - zsh
           - awscli
           - dos2unix
           - gnupg
@@ -51,8 +52,14 @@
     - include_tasks: tasks/refactor_bashrc.yml
       when: refactor_bashrc
 
-    - include_tasks: tasks/add_bash_aliases.yml
-      when: add_bash_aliases
+    - include_tasks: tasks/refactor_zshrc.yml
+      when: refactor_zshrc
+
+    - include_tasks: tasks/oh_my_posh.yml
+      when: oh_my_posh
+
+    - include_tasks: tasks/add_bash_zsh_aliases.yml
+      when: add_bash_zsh_aliases
     
     - include_tasks: tasks/yarn.yml
       when: install_yarn

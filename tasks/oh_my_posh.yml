@@ -1,0 +1,68 @@
+
+- name: "oh-my-posh download & install"
+  get_url:
+    url: "https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64"
+    dest: "/usr/local/bin/oh-my-posh"
+    checksum: "sha256:1aa68c88c8803610af4a316949aabd0f316fa187f0499a429cb59a12375ea661."
+    mode: '0755'
+  become: true
+
+- name: Creates directory
+  file:
+    path: '${HOME}/.poshthemes'
+    state: directory
+
+- name: "oh-my-posh theme download"
+  get_url:
+    url: "https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip"
+    dest: '${HOME}/.poshthemes/themes.zip'
+    checksum: "sha256:195370a20c711a42b0256bd2614332f0b61717cd504ace7e8bd0bc07935d6fe0."
+    mode: '0755'
+
+- name: Unzip theme.zip
+  ansible.builtin.unarchive:
+    src: '${HOME}/.poshthemes/themes.zip'
+    dest: '${HOME}/.poshthemes/'
+    remote_src: yes
+
+- name: Remove file (delete file)
+  ansible.builtin.file:
+    path: '${HOME}/.poshthemes/themes.zip'
+    state: absent
+
+- name: Add my custom posh theme for oh-my-posh
+  template:
+    src: poshthemes/ticustomagnosterplus_omp_json.j2
+    dest: '${HOME}/.poshthemes/ticustomagnosterplus.omp.json'
+    mode: '0600'
+
+- name: Changing permissions of all json files, adding "u+rw"
+  file:
+    dest: '${HOME}/.poshthemes'
+    mode: u+rw
+    state: directory
+    recurse: yes
+
+- name: "oh-my-posh config in .bashrc"
+  lineinfile:
+    path: '${HOME}/.bashrc'
+    state: present
+    line: "\n# oh-my-posh config"
+
+- name: "oh-my-posh config in .bashrc"
+  lineinfile:
+    path: '${HOME}/.bashrc'
+    state: present
+    line: 'eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/ticustomagnosterplus.omp.json)"'
+
+- name: "oh-my-posh config in .zshrc"
+  lineinfile:
+    path: '${HOME}/.zshrc'
+    state: present
+    line: "\n# oh-my-posh config"
+
+- name: "oh-my-posh config in .zshrc"
+  lineinfile:
+    path: '${HOME}/.zshrc'
+    state: present
+    line: 'eval "$(oh-my-posh --init --shell zsh --config ~/.poshthemes/ticustomagnosterplus.omp.json)"'

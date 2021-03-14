@@ -1,6 +1,0 @@
-- name: Add bash aliases for git
-  template:
-    src: bash.bash_aliases.j2
-    dest: ${HOME}/.bash_aliases
-    backup: yes
-  

@@ -23,20 +23,50 @@
     state: link
   become: true
 
+- name: "aws-vault config in .bashrc"
+  lineinfile:
+    path: '${HOME}/.bashrc'
+    state: present
+    line: "\n# aws-vault config"
+
 - name: "aws-vault - set completions in .bashrc"
   lineinfile:
     path: '${HOME}/.bashrc'
     state: present
     line: 'eval "$(aws-vault --completion-script-bash)"'
 
-- name: "aws-vault - set backend to file"
+- name: "aws-vault - set backend to file in .bashrc"
   lineinfile:
     path: '${HOME}/.bashrc'
     state: present
     line: 'export AWS_VAULT_BACKEND=file'
 
-- name: "aws-vault - export AWS_SESSION_TOKEN_TTL"
+- name: "aws-vault - export AWS_SESSION_TOKEN_TTL in .bashrc"
   lineinfile:
     path: '${HOME}/.bashrc'
+    state: present
+    line: 'export AWS_SESSION_TOKEN_TTL=10h'
+
+- name: "aws-vault config in .zshrc"
+  lineinfile:
+    path: '${HOME}/.zshrc'
+    state: present
+    line: "\n# aws-vault config"
+
+- name: "aws-vault - set completions in .zshrc"
+  lineinfile:
+    path: '${HOME}/.zshrc'
+    state: present
+    line: 'eval "$(aws-vault --completion-script-zsh)"'
+
+- name: "aws-vault - set backend to file in .zshrc"
+  lineinfile:
+    path: '${HOME}/.zshrc'
+    state: present
+    line: 'export AWS_VAULT_BACKEND=file'
+
+- name: "aws-vault - export AWS_SESSION_TOKEN_TTL in .zshrc"
+  lineinfile:
+    path: '${HOME}/.zshrc'
     state: present
     line: 'export AWS_SESSION_TOKEN_TTL=10h'

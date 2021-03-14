@@ -1,0 +1,6 @@
+- name: Refactor zshrc file
+  template:
+    src: zsh.zshrc.j2
+    dest: ${HOME}/.zshrc
+    backup: yes
+  

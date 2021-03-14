@@ -3,8 +3,26 @@
     repo: 'https://github.com/tfutils/tfenv.git'
     dest: '${HOME}/.tfenv'
 
+- name: "tfenv config in .bashrc"
+  lineinfile:
+    path: '${HOME}/.bashrc'
+    state: present
+    line: "\n# tfenv config"
+
 - name: "tfenv - set path in bashrc"
   lineinfile:
     path: '${HOME}/.bashrc'
+    state: present
+    line: 'export PATH="$HOME/.tfenv/bin:$PATH"'
+
+- name: "tfenv config in .zshrc"
+  lineinfile:
+    path: '${HOME}/.zshrc'
+    state: present
+    line: "\n# tfenv config"
+
+- name: "tfenv - set path in zshrc"
+  lineinfile:
+    path: '${HOME}/.zshrc'
     state: present
     line: 'export PATH="$HOME/.tfenv/bin:$PATH"'

@@ -6,3 +6,15 @@
     checksum: "sha256:a5895007f331f08d2e082eb12458764949559f30bcc5beae26c38f3e2724262c"
     mode: '0755'
   become: true
+
+- name: "aws-vault - set completions in .bashrc"
+  lineinfile:
+    path: '${HOME}/.bashrc'
+    state: present
+    line: "\n# kubectl config\nsource <(kubectl completion bash)"
+
+- name: "aws-vault - set completions in .zshrc"
+  lineinfile:
+    path: '${HOME}/.zshrc'
+    state: present
+    line: "\n# kubectl config\nsource <(kubectl completion zsh)"

@@ -1,0 +1,105 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "vertical_offset": -1,
+      "segments": [
+        {
+          "type": "time",
+          "style": "plain",
+          "foreground": "#007ACC",
+          "properties": {
+            "time_format": "3:04:05 PM"
+          }
+        },
+        {
+          "type": "terraform",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#000000",
+          "background": "#ebcc34"
+        }
+      ]
+    },
+    {
+      "type": "newline"
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "os",
+          "style": "powerline",
+          "foreground": "#000000",
+          "background": "#ffffff",
+          "powerline_symbol": "\uE0B0",
+          "properties": {
+            "ubuntu": " \uF31C ",
+            "wsl_separator": " \uF054",
+            "wsl": " \uF17A "
+          }
+        },
+        {
+          "type": "python",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#100e23",
+          "background": "#906cff",
+          "properties": {
+            "prefix": " \uE235 ",
+            "display_mode": "environment"
+          }
+        },
+        {
+          "type": "session",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#100e23",
+          "background": "#ffffff",
+          "properties": {
+            "default_user_name": "touhid",
+            "display_default": false
+          }
+        },
+        {
+          "type": "path",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#100e23",
+          "background": "#91ddff",
+          "properties" : {
+              "home_icon": "\uF7DB",
+              "folder_icon": "\uF115",
+              "folder_separator_icon": " \uE0B1 ",
+              "style": "agnoster"
+          }
+        },
+        {
+          "type": "git",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#193549",
+          "background": "#95ffa4",
+          "properties": {
+            "display_stash_count": true,
+            "display_upstream_icon": true
+          }
+        },
+        {
+          "type": "shell",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#ffffff",
+          "background": "#0077c2",
+          "properties": {
+            "prefix": " \uFCB5 "
+          }
+        }
+      ]
+    }
+  ],
+  "final_space": true
+}

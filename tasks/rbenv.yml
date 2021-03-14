@@ -8,6 +8,12 @@
 - name: "rbenv build"
   shell: 'cd ${HOME}/.rbenv && src/configure && make -C src'
 
+- name: "rbenv config in .bashrc"
+  lineinfile:
+    path: '${HOME}/.bashrc'
+    state: present
+    line: "\n# rbenv config"
+
 - name: "rbenv - set path in bashrc"
   lineinfile:
     path: '${HOME}/.bashrc'
@@ -17,6 +23,24 @@
 - name: "rbenv - set init in .bashrc"
   lineinfile:
     path: '${HOME}/.bashrc'
+    state: present
+    line: 'eval "$(rbenv init -)"'
+
+- name: "rbenv config in .zshrc"
+  lineinfile:
+    path: '${HOME}/.zshrc'
+    state: present
+    line: "\n# rbenv config"
+
+- name: "rbenv - set path in zshrc"
+  lineinfile:
+    path: '${HOME}/.zshrc'
+    state: present
+    line: 'export PATH="$HOME/.rbenv/bin:$PATH"'
+
+- name: "rbenv - set init in .zshrc"
+  lineinfile:
+    path: '${HOME}/.zshrc'
     state: present
     line: 'eval "$(rbenv init -)"'
 

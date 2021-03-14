@@ -6,4 +6,6 @@ install_yarn: yes
 install_kubectl: yes
 install_eksctl: yes
 refactor_bashrc: yes
-add_bash_aliases: yes
+refactor_zshrc: yes
+oh_my_posh: yes
+add_bash_zsh_aliases: yes
