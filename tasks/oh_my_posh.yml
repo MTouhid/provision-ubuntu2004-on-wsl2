@@ -16,7 +16,7 @@
   get_url:
     url: "https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip"
     dest: '${HOME}/.poshthemes/themes.zip'
-    checksum: "sha256:195370a20c711a42b0256bd2614332f0b61717cd504ace7e8bd0bc07935d6fe0."
+    checksum: "sha256:f111496342d71187ba3f1225296e7dc4d4ad878d8ed4f3657ddca6e998048dcf."
     mode: '0755'
 
 - name: Unzip theme.zip
