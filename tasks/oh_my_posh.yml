@@ -36,6 +36,12 @@
     dest: '${HOME}/.poshthemes/ticustomagnosterplus.omp.json'
     mode: '0600'
 
+- name: Add my second custom posh theme for oh-my-posh
+  template:
+    src: poshthemes/ticustompowerlevel10k_lean_omp_json.j2
+    dest: '${HOME}/.poshthemes/ticustompowerlevel10k_lean.omp.json'
+    mode: '0600'
+
 - name: Changing permissions of all json files, adding "u+rw"
   file:
     dest: '${HOME}/.poshthemes'
@@ -53,7 +59,7 @@
   lineinfile:
     path: '${HOME}/.bashrc'
     state: present
-    line: 'eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/ticustomagnosterplus.omp.json)"'
+    line: 'eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/ticustompowerlevel10k_lean.omp.json)"'
 
 - name: "oh-my-posh config in .zshrc"
   lineinfile:
@@ -65,4 +71,4 @@
   lineinfile:
     path: '${HOME}/.zshrc'
     state: present
-    line: 'eval "$(oh-my-posh --init --shell zsh --config ~/.poshthemes/ticustomagnosterplus.omp.json)"'
+    line: 'eval "$(oh-my-posh --init --shell zsh --config ~/.poshthemes/ticustompowerlevel10k_lean.omp.json)"'
