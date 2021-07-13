@@ -19,7 +19,8 @@ SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
 # Use modern completion system
-autoload -Uz compinit
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
 compinit
 
 # Include bash zsh aliases if present

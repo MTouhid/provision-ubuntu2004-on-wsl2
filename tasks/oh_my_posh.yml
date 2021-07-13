@@ -3,7 +3,7 @@
   get_url:
     url: "https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64"
     dest: "/usr/local/bin/oh-my-posh"
-    checksum: "sha256:1aa68c88c8803610af4a316949aabd0f316fa187f0499a429cb59a12375ea661."
+    checksum: "sha256:35f9b743c427b374f0e192420619204ed476d4cd0710d600820ff23927426c05."
     mode: '0755'
   become: true
 
@@ -16,7 +16,7 @@
   get_url:
     url: "https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip"
     dest: '${HOME}/.poshthemes/themes.zip'
-    checksum: "sha256:f111496342d71187ba3f1225296e7dc4d4ad878d8ed4f3657ddca6e998048dcf."
+    checksum: "sha256:b83567b60150a16de4b55bd981187005120c5a876538fe75fb5d09e83c39c09d."
     mode: '0755'
 
 - name: Unzip theme.zip

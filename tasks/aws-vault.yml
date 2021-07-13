@@ -47,6 +47,18 @@
     state: present
     line: 'export AWS_SESSION_TOKEN_TTL=10h'
 
+- name: "aws cli autocomplete in .bashrc"
+  lineinfile:
+    path: '${HOME}/.bashrc'
+    state: present
+    line: "\n# aws cli autocomplete"
+
+- name: "aws cli - set autocompletions in .bashrc"
+  lineinfile:
+    path: '${HOME}/.bashrc'
+    state: present
+    line: 'complete -C "/usr/bin/aws_completer" aws'
+
 - name: "aws-vault config in .zshrc"
   lineinfile:
     path: '${HOME}/.zshrc'
@@ -70,3 +82,15 @@
     path: '${HOME}/.zshrc'
     state: present
     line: 'export AWS_SESSION_TOKEN_TTL=10h'
+
+- name: "aws cli autocomplete in .zshrc"
+  lineinfile:
+    path: '${HOME}/.zshrc'
+    state: present
+    line: "\n# aws cli autocomplete"
+
+- name: "aws cli - set autocompletions in .zshrc"
+  lineinfile:
+    path: '${HOME}/.zshrc'
+    state: present
+    line: 'complete -C "/usr/bin/aws_completer" aws'
