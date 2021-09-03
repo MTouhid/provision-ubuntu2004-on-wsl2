@@ -51,19 +51,8 @@ alias shenv='export SHARED_SERVICES_ACCOUNT_ID={{ moj_pttp_shared_services_accou
 alias bsrc='source ~/.bashrc'
 alias zsrc='source ~/.zshrc'
 alias av='aws-vault exec'
-alias av-shared='aws-vault exec moj-pttp-shared-services --'
-alias av-dev='aws-vault exec moj-pttp-dev --'
-alias av-prep='aws-vault exec moj-pttp-pre-production --'
-alias av-prod='aws-vault exec moj-staff-device-production --'
+alias av-shared='aws-vault exec mojo-shared-services --'
+alias av-dev='aws-vault exec mojo-development --'
+alias av-prep='aws-vault exec mojo-pre-production --'
+alias av-prod='aws-vault exec mojo-production --'
 alias k='kubectl'
-
-# -------------------------------------
-# My Custom Aliases for Git Repo Paths
-# -------------------------------------
-alias infra='cd ~/gitrepos/dns-dhcp/staff-device-dns-dhcp-infrastructure/'
-alias admin='cd ~/gitrepos/dns-dhcp/staff-device-dns-dhcp-admin/'
-alias dhcp='cd ~/gitrepos/dns-dhcp/staff-device-dhcp-server/'
-alias dns='cd ~/gitrepos/dns-dhcp/staff-device-dns-server/'
-alias disaster='cd ~/gitrepos/dns-dhcp/staff-device-dns-dhcp-disaster-recovery/'
-alias monitoring='cd ~/gitrepos/ima/staff-infrastructure-monitoring/'
-alias config='cd ~/gitrepos/ima/staff-infrastructure-monitoring-config/'
