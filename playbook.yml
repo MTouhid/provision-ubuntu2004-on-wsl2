@@ -34,7 +34,6 @@
           - awscli
           - dos2unix
           - gnupg
-          - gnupg2
           - golang
           - graphviz
           - jq
