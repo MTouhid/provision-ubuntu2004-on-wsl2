@@ -7,9 +7,40 @@
       "vertical_offset": -1,
       "segments": [
         {
+          "type": "memory",
+          "style": "powerline",
+          "foreground": "#26C6DA",
+          "properties": {
+            "precision": 1,
+            "prefix": " <#ff452d>\uf85a</> ",
+            "postfix": "% "
+          }
+        },
+        {
+          "type": "ruby",
+          "style": "powerline",
+          "foreground": "#00ffbc",
+          "properties": {
+            "prefix": " <#ff0043>\uE791</> "
+          }
+        },
+        {
           "type": "terraform",
           "style": "powerline",
-          "foreground": "#ebcc34"
+          "foreground": "#0077ff",
+          "properties": {
+            "prefix": " <#ff8800>\uE7AD</> "
+          }
+        },
+        {
+          "type": "executiontime",
+          "style": "powerline",
+          "foreground": "#ff009b",
+          "properties": {
+            "threshold": 1,
+            "style": "austin",
+            "prefix": " <#00ff64>\uFA1A</> "
+          }
         }
       ]
     },
@@ -23,24 +54,34 @@
         {
           "type": "path",
           "style": "plain",
-          "foreground": "#77E4F7",
+          "foreground": "#57b5ff",
           "properties": {
             "prefix": "",
-            "style": "full"
+            "style": "full",
+            "mapped_locations": {
+              "~/work-projects/dns-dhcp/": "\uF6D5 ",
+              "~/work-projects/ima/": "\uF878 ",
+              "~/work-projects/documentations/": "\uF718 ",
+              "~/work-projects/network-services/": "\uF502 ",
+              "~/work-projects/shared-services/": "\uF1E1 "
+            }
           }
         },
         {
           "type": "git",
           "style": "plain",
-          "foreground": "#FFE700",
+          "foreground": "#ffb600",
           "properties": {
-            "prefix": ""
+            "prefix": "",
+            "fetch_status": true,
+            "fetch_stash_count": true,
+            "fetch_worktree_count": true
           }
         },
         {
           "type": "text",
           "style": "plain",
-          "foreground": "#43D426",
+          "foreground": "#ed00ff",
           "properties": {
             "prefix": "",
             "text": "\u276F"
